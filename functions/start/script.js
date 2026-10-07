@@ -9,7 +9,10 @@ function greet(name) {
   return "Hello, " + name + "!";
 }
 
+console.log(greet("Andrea"));
+console.log(greet("Nawaal"));
 console.log(greet("Ana"));
+
 
 // TODO 1: call greet with your own name and log what it gives back.
 
@@ -17,19 +20,37 @@ console.log(greet("Ana"));
 
 // Make an instrument and plug it into the speakers.
 const synth = new Tone.Synth().toDestination();
+const drum = new Tone.MembraneSynth().toDestination();
+
 
 // Plays three notes, timed from start.
 // TODO 2: change the notes to ones you like. A note is A to G, then a number: "D4", "A3".
 function playRiff(start) {
-  synth.triggerAttackRelease("C4", "8n", start);
-  synth.triggerAttackRelease("E4", "8n", start + 0.5);
-  synth.triggerAttackRelease("G4", "8n", start + 1);
+  synth.triggerAttackRelease("D4", "4n", start);
+  synth.triggerAttackRelease("G4", "8n", start + 0.5);
+  synth.triggerAttackRelease("E4", "8n", start + 1);
+  synth.triggerAttackRelease("B4", "8n", start + 1.25);
   // TODO 3: add a fourth note at start + 1.5
 }
+
+function kick(start) {
+  drum.triggerAttackRelease("C1", "8n", start);
+
+}
+
 
 // The whole song, timed from start.
 function song(start) {
   playRiff(start);
+  playRiff(start + 3);
+  kick(start + 1);
+  kick(start + 1.5);
+  kick(start + 2);
+  kick(start + 4);
+  kick(start + 4.5);
+  kick(start + 5);
+
+
   // TODO 4: call playRiff again, two seconds after the first one
 }
 
