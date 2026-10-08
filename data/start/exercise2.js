@@ -9,6 +9,11 @@ console.log("Exercise 2: fullNote is " + fullNote);
 // TODO 2b: log fullNote again. Predict first: has it changed?
 // TODO 2c: rebuild it from its parts (fullNote = pitchName + octave;) and log it once more.
 
+
+octave = octave + 1
+console.log(fullNote)
+fullNote = pitchName + octave
+console.log(fullNote)
 function exercise2(start) {
   synth.triggerAttackRelease(fullNote, "4n", start);
 }
