@@ -8,10 +8,12 @@
 function greet(name) {
   return "Hello, " + name + "!";
 }
-
 console.log(greet("Andrea"));
 console.log(greet("Nawaal"));
 console.log(greet("Ana"));
+
+
+
 
 
 // TODO 1: call greet with your own name and log what it gives back.
