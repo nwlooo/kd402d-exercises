@@ -13,6 +13,10 @@ function exercise5(start) {
   //            } else {
   //              ...the line that plays...
   //            }
+
+  if (isMuted) {
+    console.log("Exercise 5 : muted, so nothing plays")
+  } else {
   synth.triggerAttackRelease(note, duration, start);
 
   // TODO 5b: flip isMuted to true and press. Then back to false. Which block ran each time?
@@ -20,6 +24,9 @@ function exercise5(start) {
   //          Predict, then press. Do you hear the note? Take the quotation marks away again.
 }
 
+}
+
 // ---------- You don't need to change anything below this line ----------
 
 playOnClick("play-5", exercise5);
+
