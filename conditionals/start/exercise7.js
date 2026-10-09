@@ -8,9 +8,18 @@ function exercise7(start) {
   let bpm = 100;
   let duration = "8n";
 
+  if (!isMuted && bpm > 90) {
+
+
   // TODO 7a: play the note only if the sound is not muted AND the tempo is more than 90:
   //            if (!isMuted && bpm > 90) { … }
   synth.triggerAttackRelease("E4", duration, start);
+  }
+  if (duration === "8n" || duration === "16n") {
+    synth.triggerAttackRelease("G5", "16n", start + 0.5);
+  }
+
+console.log("Exercise 7: not muted and fast enough? " + (!isMuted && bpm > 90));
 
   // TODO 7b: short notes get a high G on top, half a second later. Add a second if:
   //            if (duration === "8n" || duration === "16n") {
@@ -20,7 +29,7 @@ function exercise7(start) {
   //            console.log("Exercise 7: not muted and fast enough? " + (!isMuted && bpm > 90));
   // TODO 7d: change one value at a time, predict, then press:
   //            isMuted = true      bpm = 80      duration = "4n"      duration = "16n"
-}
+  }
 
 // ---------- You don't need to change anything below this line ----------
 
